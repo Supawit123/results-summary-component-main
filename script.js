@@ -25,6 +25,18 @@ async function loadLocalJsonFile() {
     verbal_score.innerText = data[2].score;
     visual_score.innerText = data[3].score;
 
+    /*เพิ่ม icon*/
+    
+    const reaction_icon = document.querySelector('#reaction_icon');
+    const memory_icon = document.querySelector('#memory_icon');
+    const verbal_icon = document.querySelector('#verbal_icon');
+    const visual_icon = document.querySelector('#visual_icon');
+    
+    reaction_icon.src= data[0].icon;
+    memory_icon.src=data[1].icon;
+    verbal_icon.src=data[2].icon;
+    visual_icon.src=data[3].icon;
+
   } catch (error) {
     console.error('เกิดข้อผิดพลาด: ' + error);
   }
