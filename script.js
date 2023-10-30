@@ -1,31 +1,21 @@
-
-
-
 async function loadLocalJsonFile() {
   try {
     const response = await fetch('data.json');
     if (!response.ok) {
       throw new Error('ไม่สามารถโหลดข้อมูลได้');
     }
-
+    /* แปลงข้อมูลใน json มาใส่ ตัวแปร data*/
     const data = await response.json();
     
-    
-    
     const reaction_score = document.getElementById('reaction_score');
-
     const memory_score = document.getElementById('memory_score');
-
     const verbal_score = document.getElementById('verbal_score');
-
     const visual_score = document.getElementById('visual_score');
     
     reaction_score.innerText = data[0].score;
     memory_score.innerText = data[1].score;
     verbal_score.innerText = data[2].score;
     visual_score.innerText = data[3].score;
-
-    /*เพิ่ม icon*/
     
     const reaction_icon = document.querySelector('#reaction_icon');
     const memory_icon = document.querySelector('#memory_icon');
@@ -41,5 +31,5 @@ async function loadLocalJsonFile() {
     console.error('เกิดข้อผิดพลาด: ' + error);
   }
 }
-
 loadLocalJsonFile();
+    
